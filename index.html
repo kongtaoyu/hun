@@ -1,0 +1,357 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta content="感谢您舍己为人慷慨解囊，资助了贫困的我" name="description">
+  <meta content="舍己为人,无私奉献,慷慨解囊" name="keywords">
+  <meta name="theme-color" content="#252628">
+  <title>Free.td 好哥哥</title>
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
+  <link rel="icon" type="image/png" sizes="144x144" href="assets/images/logo.png">
+  <link rel="apple-touch-icon" type="image/png" href="assets/images/logo.png">
+  <style>
+    @font-face {
+      font-family: 'MFZhuoYing';
+      src: url('assets/fonts/MFZhuoYing.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+    html,body {
+      margin: 0;
+    }
+    html {
+      font-size: 13.3333vw;
+    }
+    body {
+      font-size: 16px;
+      background-color: #fff;
+      font-family: sans-serif;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url(assets/images/hand-hold.png);
+      background-size: auto 100%;
+      background-position: 50% 100%;
+      background-repeat: no-repeat;
+    }
+
+    a,a:visited {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    main {
+      width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      position: relative;
+      z-index: 2;
+    }
+
+    h1 {margin-top: 6vh;}
+
+    h1 svg {
+      height: 50px;
+    }
+    h1 span,
+    li span {
+      position: absolute !important;
+      clip: rect(1px 1px 1px 1px);
+      clip: rect(1px, 1px, 1px, 1px);
+      padding:0 !important;
+      border:0 !important;
+      height: 1px !important;
+      width: 1px !important;
+      overflow: hidden;
+    }
+    
+    section {
+      position: relative;
+      display: block;
+      padding: 35% 0 0;
+      background-image: url(assets/images/banner.png);
+      background-size: auto 100%;
+      background-position: 0 50%;
+      background-repeat: no-repeat;
+      user-select: none;
+    }
+    section, li a {
+      border-radius: 6px;
+      -webkit-backdrop-filter: blur(5px);
+      backdrop-filter: blur(5px);
+      background-color: rgba(0,18,165,.05);
+      -webkit-user-select: none;
+      user-select: none;
+    }
+
+    article {
+      position: absolute;
+      top: 0;
+      right: 2.5%;
+      bottom: 0;
+      font-family: 'MFZhuoYing',sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    article h2 {
+      margin: 0;
+      font-size: .54rem;
+      font-weight: normal;
+    }
+    article p {
+      margin: 0;
+      font-size: .32rem;
+      line-height: 1.2;
+    }
+
+    ul {
+      list-style: none;
+      margin: 20px 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    li {
+      padding-top: 100%;
+      position: relative;
+    }
+
+    li a {
+      position: absolute;
+      z-index: 9;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+
+    li:nth-child(1) a:focus,
+    li:nth-child(1) a:hover {
+      background-color: rgb(7 193 96/.2);
+    }
+    li:nth-child(2) a:focus,
+    li:nth-child(2) a:hover {
+      background-color: rgb(22 119 225/.2);
+    }
+    li:nth-child(3) a:focus,
+    li:nth-child(3) a:hover {
+      background-color: rgb(37 59 128/.2);
+    }
+    li:nth-child(4) a:focus,
+    li:nth-child(4) a:hover {
+      background-color: rgb(49 0 135/.2);
+    }
+
+    li svg {width: 30%;position: absolute;}
+    li:nth-child(2) svg {width: 28%;}
+    li:nth-child(4) svg {width: 32%;}
+
+    li:nth-child(1) a:hover path  {
+      fill: #07C160;
+    }
+    li:nth-child(2) a:hover path:nth-child(1) {
+      fill: #1677FF;
+    }
+    li:nth-child(3) a:hover path:nth-child(1) {
+      fill: #0070E0;
+    }
+    li:nth-child(3) a:hover path:nth-child(2) {
+      fill: #003087;
+    }
+    li:nth-child(4) a:hover g {
+      fill: #310087;
+    }
+
+    li img {
+      width: 100%;
+      visibility: hidden;
+      z-index: 8;
+    }
+    li > img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      visibility: visible;
+    }
+
+    a:focus,
+    a.selected {
+      background-color: rgb(255 255 255 /.4)!important;
+      box-shadow: inset 0 0 1px rgb(0 0 0 /.2);
+    }
+
+    a:focus svg,
+    a.selected svg {
+      visibility: hidden;
+    }
+    li:nth-child(3) a:focus svg {
+      visibility: visible;
+    }
+
+    a:focus img,
+    a.selected img {
+      visibility: visible;
+    }
+
+    footer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: auto 0 5vh;
+      color: #878b99;
+    }
+    footer::before {
+      content: '';
+      display: block;
+      width: 100px;
+      height: 100px;
+      background-image: url(assets/images/dissapoint.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    footer span::before {
+      content: '''';
+    }
+
+    @media screen and (orientation: portrait) and (max-width: 750px) {
+      article h2 {
+        font-size: 1rem;
+        margin-right: 0.3rem;
+      }
+      article span,
+      article p {
+        display: none;
+      }
+    }
+    @media screen and (orientation: portrait) and (max-width: 560px) {
+      ul {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media screen and (max-width: 800px) {
+      main {
+        width: auto;
+        margin: 0 20px;
+      }
+    }
+    @media screen and (min-width: 750px) {
+      html { font-size: 100px;}
+    }
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: #191919;
+      }
+      h1 path:nth-child(1) {
+        fill: #fff;
+      }
+      article {color: #fff;}
+      section, li a {
+        background-color: rgb(255 255 255/.05);
+        box-shadow: inset 0 0 1px rgb(255 255 255 / 30%), 0 0 1px rgb(0 0 0 / 30%);
+      }
+      li a:focus {
+        background-color: rgb(255 255 255/.2)!important;
+      }
+      li a:hover {
+        box-shadow: none;
+      }
+      li:nth-child(4) g {
+        fill: #999;
+      }
+      li:nth-child(4) a:hover g {
+        fill: #ae7eff;
+      }
+      footer {
+        color: rgb(255 255 255/.2);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <h1>
+      
+<a href="https://hao.gg"  target="_blank" title="进入博客"><img src="./assets/images/1678720193480-0.svg" border=0 width="217px"></a><br>
+      <span>Free.td<sup>打赏一下吧</sup></span>
+    </h1>
+    <section>
+      <article>
+        <h2>感谢<span>您，</span></h2>
+        <p>公益事业的支持者；<br>慈善行为的实践者；<br>社会责任的担当者。</p>
+      </article>
+    </section>
+    <ul>
+      <li>
+        <a title="WeChat Pay" href="javascript:;">
+          <img src="./assets/images/wx.png" alt="WeChat Pay">
+          <svg viewBox="0 0 64 64">
+            <path d="M23.686 39.118a2.07 2.07 0 0 1-.935.225c-.78 0-1.459-.433-1.815-1.072l-.135-.3-5.679-12.569a1.044 1.044 0 0 1 .94-1.49c.235 0 .448.077.623.208l6.7 4.811a3.085 3.085 0 0 0 2.77.32l31.508-14.146C52.016 8.389 42.713 4 32.187 4 14.962 4 1 15.738 1 30.218c0 7.9 4.2 15.012 10.776 19.818a2.1 2.1 0 0 1 .872 1.71c0 .232-.047.444-.109.666l-1.405 5.29c-.065.247-.168.507-.168.766 0 .579.465 1.048 1.04 1.048.225 0 .41-.084.601-.194l6.828-3.978c.513-.298 1.057-.483 1.656-.483.32 0 .627.05.917.139a36.616 36.616 0 0 0 10.18 1.437c17.225 0 31.188-11.738 31.188-26.219 0-4.384-1.287-8.514-3.552-12.148l-35.91 20.914-.228.134Z"/>
+          </svg>
+          <span>Giving by WeChat Pay</span>
+        </a>
+      </li>
+      <li>
+        <a title="Alipay" href="javascript:;">
+          <img src="./assets/images/qq.png" alt="Alipay">
+          <svg t="1678718718139" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3334" width="208" height="208"><path d="M824.8 613.2c-16-51.4-34.4-94.6-62.7-165.3C766.5 262.2 689.3 112 511.5 112 331.7 112 256.2 265.2 261 447.9c-28.4 70.8-46.7 113.7-62.7 165.3-34 109.5-23 154.8-14.6 155.8 18 2.2 70.1-82.4 70.1-82.4 0 49 25.2 112.9 79.8 159-26.4 8.1-85.7 29.9-71.6 53.8 11.4 19.3 196.2 12.3 249.5 6.3 53.3 6 238.1 13 249.5-6.3 14.1-23.8-45.3-45.7-71.6-53.8 54.6-46.2 79.8-110.1 79.8-159 0 0 52.1 84.6 70.1 82.4 8.5-1.1 19.5-46.4-14.5-155.8z" p-id="3335"></path></svg>
+          <span>Giving by QQpay</span>
+        </a>
+      </li>
+      <li>
+      <a title="Alipay" href="javascript:;">
+          <img src="./assets/images/zan.png" alt="Alipay">
+          <svg t="1678718846313" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3697" width="128" height="128"><path d="M395.086755 431.098435l232.463446 0 0 42.464137L395.086755 473.562573 395.086755 431.098435 395.086755 431.098435zM395.086755 431.098435" fill="#272636" p-id="3698"></path><path d="M511.999488 65.285912c-246.720148 0-446.708971 199.998033-446.708971 446.709995 0 246.709915 199.989847 446.718181 446.708971 446.718181S958.70846 758.705821 958.70846 511.995907C958.70846 265.283945 758.718613 65.285912 511.999488 65.285912L511.999488 65.285912zM258.752694 317.101101l107.280352 0c-8.933463-8.933463-23.854291-22.353101-44.706201-40.229237-7.468089-5.942339-12.668531-10.409071-15.634072-13.409404l53.639664-13.418614c35.753295 28.329209 61.805648 49.949622 78.225619 64.825424l-4.484128 2.233877 46.939055 0 0-73.758887 62.591547 0 0 73.758887 44.706201 0-4.466732-2.233877c25.319665-17.886369 52.139497-39.461757 80.46052-64.825424l53.639664 13.418614c-17.86795 17.877159-38.755676 35.762505-62.574151 53.639664L763.901659 317.102125l0 100.587929-60.35767 0 0-58.124815L316.861136 359.565239l0 58.124815-58.107419 0L258.753717 317.101101 258.752694 317.101101zM361.566314 587.559906l0 93.880157-60.35767 0L301.208645 545.088606l422.454568 0 0 131.884726-58.124815 0 0-89.413426L361.566314 587.559906 361.566314 587.559906zM334.728062 513.801019l0-120.698966 350.929558 0 0 120.698966L334.728062 513.801019 334.728062 513.801019zM739.297284 775.318174c-99.846032-38.774095-175.839821-64.826448-227.978295-78.226642-32.806173 40.22105-113.998357 67.040882-243.630786 80.459496-5.967922-17.886369-13.418614-35.771715-22.353101-53.639664 165.404144-7.484462 245.096161-45.438888 239.164055-113.998357l60.340273 0c-1.50119 16.420995-5.234211 31.28861-11.167341 44.707225 26.819832 7.467065 66.273403 20.100804 118.465089 37.986149 50.638307 14.919804 88.626503 26.052353 113.998357 33.538861L739.297284 775.318174 739.297284 775.318174zM739.297284 775.318174" fill="#272636" p-id="3699"></path></svg>
+          <span>Giving by Azanpay</span>          </a>
+      </li>
+      <li>
+        <a title="Alipay" href="javascript:;">
+          <img src="./assets/images/zfb.png" alt="Alipay">
+          <svg viewBox="0 0 52 52">
+            <path fill="#000" d="M43.673 0H8.33A8.328 8.328 0 0 0 0 8.33v35.34C0 48.27 3.727 52 8.33 52h35.343A8.327 8.327 0 0 0 52 43.67V8.33A8.327 8.327 0 0 0 43.673 0"/>
+            <path fill="#FFF" d="M14.297 40.22c-8.037 0-10.414-6.343-6.442-9.812 1.326-1.173 3.749-1.746 5.04-1.874 4.774-.473 9.194 1.352 14.41 3.903-3.667 4.79-8.336 7.783-13.008 7.783m28.575-7.303c-2.066-.693-4.84-1.754-7.93-2.874 1.856-3.232 3.337-6.912 4.312-10.911H29.07v-3.675h12.474v-2.05H29.071V7.28h-5.092c-.894 0-.894.883-.894.883v5.243H10.47v2.051h12.616v3.675H12.67v2.05h20.203a36.141 36.141 0 0 1-2.91 7.125c-6.555-2.167-13.551-3.924-17.945-2.842-2.81.693-4.621 1.932-5.684 3.229C1.452 34.643 4.95 43.68 15.26 43.68c6.095 0 11.966-3.405 16.516-9.015C38.562 37.934 52 43.546 52 43.546v-7.998s-1.687-.135-9.128-2.63"/>
+          </svg>
+          <span>Giving by zfbpay</span>
+        </a>
+      </li>
+    </ul>
+    <footer><span>落魄程序员在线求可怜</span></footer>
+  </main>
+</body>
+<script>
+<script src="assets/scripts/zepto.js"></script>
+
+<script>
+  $(function(){
+    $('li').on('click',function(){
+      $('a',this).addClass('selected');
+      $(this).siblings().find('a').removeClass('selected')
+    })
+    if($.os.phone || $.os.tablet) {
+      $('li:nth-child(2) a').attr('href','https://qr.alipay.com/fkx15951yjlqga3iqjmrr6c')
+      if($.os.wechat) {
+        $('li:nth-child(1) img').attr('src','./assets/images/qr-wechat-in.png');
+      }
+    }
+  })
+</script>
+</html>
