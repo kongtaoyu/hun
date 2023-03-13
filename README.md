@@ -1,2 +1,2 @@
-# SELF.GIVING
-A Donate Website for [熊宝](https://xio.ng/)
+# Ferr.td
+A Donate Website for [好哥哥](https://hao.gg/)
